@@ -304,28 +304,7 @@ else:
 ## Creating a Standalone Executable
 If you want to create a standalone executable that can run without the need to install `python` or `face_recognition`, you can use [PyInstaller](https://github.com/pyinstaller/pyinstaller). However, it requires some custom configuration to work with this library. See [this issue](https://github.com/ageitgey/face_recognition/issues/357) for how to do it.
 
-## Articles and Guides that cover `face_recognition`
 
-- My article on how Face Recognition works:
-- [Modern Face Recognition with Deep Learning](https://medium.com/@ageitgey/machine-learning-is-fun-part-4-modern-face-recognition-with-deep-learning-c3cffc121d78)
-  - Covers the algorithms and how they generally work
-- [Face recognition with OpenCV, Python, and deep learning](https://www.pyimagesearch.com/2018/06/18/face-recognition-with-opencv-python-and-deep-learning/) by Adrian Rosebrock
-  - Covers how to use face recognition in practice
-- [Raspberry Pi Face Recognition](https://www.pyimagesearch.com/2018/06/25/raspberry-pi-face-recognition/) by Adrian Rosebrock
-  - Covers how to use this on a Raspberry Pi
-- [Face clustering with Python](https://www.pyimagesearch.com/2018/07/09/face-clustering-with-python/) by Adrian Rosebrock
-  - Covers how to automatically cluster photos based on who appears in each photo using unsupervised learning
-
-## How Face Recognition Works
-
-If you want to learn how face location and recognition work instead of
-depending on a black box library, [read my article](https://medium.com/@ageitgey/machine-learning-is-fun-part-4-modern-face-recognition-with-deep-learning-c3cffc121d78).
-
-## Caveats
-
-* The face recognition model is trained on adults and does not work very well on children. It tends to mix
-  up children quite easy using the default comparison threshold of 0.6.
-* Accuracy may vary between ethnic groups. Please see [this wiki page](https://github.com/ageitgey/face_recognition/wiki/Face-Recognition-Accuracy-Problems#question-face-recognition-works-well-with-european-individuals-but-overall-accuracy-is-lower-with-asian-individuals) for more details.
 
 ## <a name="deployment">Deployment to Cloud Hosts (Heroku, AWS, etc)</a>
 
@@ -341,19 +320,3 @@ You can try the Docker image locally by running: `docker-compose up --build`
 There are also [several prebuilt Docker images.](docker/README.md)
 
 Linux users with a GPU (drivers >= 384.81) and [Nvidia-Docker](https://github.com/NVIDIA/nvidia-docker) installed can run the example on the GPU: Open the [docker-compose.yml](docker-compose.yml) file and uncomment the `dockerfile: Dockerfile.gpu` and `runtime: nvidia` lines.
-
-## Having problems?
-
-If you run into problems, please read the [Common Errors](https://github.com/ageitgey/face_recognition/wiki/Common-Errors) section of the wiki before filing a github issue.
-
-## Thanks
-
-* Many, many thanks to [Davis King](https://github.com/davisking) ([@nulhom](https://twitter.com/nulhom))
-  for creating dlib and for providing the trained facial feature detection and face encoding models
-  used in this library. For more information on the ResNet that powers the face encodings, check out
-  his [blog post](http://blog.dlib.net/2017/02/high-quality-face-recognition-with-deep.html).
-* Thanks to everyone who works on all the awesome Python data science libraries like numpy, scipy, scikit-image,
-  pillow, etc, etc that makes this kind of stuff so easy and fun in Python.
-* Thanks to [Cookiecutter](https://github.com/audreyr/cookiecutter) and the
-  [audreyr/cookiecutter-pypackage](https://github.com/audreyr/cookiecutter-pypackage) project template
-  for making Python project packaging way more tolerable.
